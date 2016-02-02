@@ -19,14 +19,13 @@ get '/random-cat' do
   erb :index
 end
 
-get '/named-cat' do
-  @name = params[:name]
-  p params[:name]
-  erb :index
+
+get '/cat-form' do
+  erb :cat_form
 end
 
-# get '/cat' do
-#   def sample_array
-#   @sample = %w(Amigo Oscar Viking Giorgio).sample
-#   end
-# end
+post '/named-cat' do
+  p params
+  @name = params[:name]
+  erb :index
+end
